@@ -1,118 +1,77 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { Headphones, UserCheck, TrendingUp, ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
+import Section from "@/components/ui/Section";
+import Card from "@/components/ui/Card";
+import { Headphones, UserCheck, TrendingUp } from "lucide-react";
 
 const services = [
   {
-    title: "Customer Experience Operations",
-    description: "Premium multi-channel support engineering. We deploy native-level teams to slash response times and elevate CSAT scores across your brand.",
+    title: "Customer Care Outsourcing",
+    description: "Multi-channel support (Email, Chat, Phone) to improve response time and customer satisfaction.",
     icon: Headphones,
-    metric: "99%",
-    metricLabel: "CSAT Average",
-    color: "from-blue-500 to-blue-400"
   },
   {
-    title: "Back-Office Architecture",
-    description: "From complex data engineering to executive scheduling, we optimize and automate your backend operations so your core team executes faster.",
+    title: "Virtual Assistance & Back Office",
+    description: "From scheduling to admin tasks, we handle your operations so your team stays focused.",
     icon: UserCheck,
-    metric: "0.01%",
-    metricLabel: "Error Rate",
-    color: "from-indigo-500 to-indigo-400"
   },
   {
-    title: "Growth & Sales Engineering",
-    description: "Data-driven outbound engines. We manage sourcing, qualification, and lead nurturing pipelines to deliver highly converting prospects directly to you.",
+    title: "Lead Generation & Sales Support",
+    description: "We help you find, nurture, and convert leads consistently through structured outreach.",
     icon: TrendingUp,
-    metric: "3x",
-    metricLabel: "Pipeline Growth",
-    color: "from-purple-500 to-purple-400"
   },
 ];
 
-const APPLE_EASE = [0.16, 1, 0.3, 1] as const;
-
 export default function Services() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
   return (
-    <section id="services" className="relative py-32 bg-[#04060e] overflow-hidden" ref={ref}>
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-      
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-        <div className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: APPLE_EASE }}
-            className="flex items-center gap-3 mb-6"
-          >
-            <span className="w-10 h-px bg-blue-500/50" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-400/80">Capabilities</span>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 gap-10 md:gap-20">
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.1, ease: APPLE_EASE }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] font-heading text-white max-w-xl"
-            >
-              Engineered <br />
-              <span className="text-white/40">for scale.</span>
-            </motion.h2>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2, ease: APPLE_EASE }}
-              className="text-lg md:text-xl text-white/40 leading-[1.8] max-w-lg mt-2"
-            >
-              We don't just provide bodies. We build scalable operational engines designed to integrate seamlessly into your existing workflows and tools.
-            </motion.p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 + (index * 0.1), duration: 0.8, ease: APPLE_EASE }}
-              className="group"
-            >
-              <div className="h-full rounded-2xl border border-white/[0.05] bg-white/[0.015] p-8 md:p-10 transition-all duration-500 hover:bg-white/[0.03] hover:border-white/[0.1] relative overflow-hidden flex flex-col">
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-[0.03] rounded-full blur-2xl group-hover:opacity-[0.08] transition-opacity duration-700`} />
-                
-                <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-8 relative z-10 transition-transform duration-500 group-hover:scale-110">
-                  <service.icon className="w-5 h-5 text-white/80" />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-4 font-heading tracking-tight text-white/90 group-hover:text-white transition-colors">
-                  {service.title}
-                </h3>
-                
-                <p className="text-[14px] leading-[1.8] text-white/40 mb-10 flex-grow">
-                  {service.description}
-                </p>
-                
-                <div className="flex items-end justify-between mt-auto pt-6 border-t border-white/[0.05]">
-                  <div>
-                     <p className="text-2xl font-bold font-heading text-white/80">{service.metric}</p>
-                     <p className="text-[11px] font-medium uppercase tracking-widest text-white/30 mt-1">{service.metricLabel}</p>
-                  </div>
-                  <button className="w-10 h-10 rounded-full border border-white/[0.08] bg-white/[0.02] flex items-center justify-center transition-all duration-300 group-hover:bg-white text-white/50 group-hover:text-black">
-                     <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <Section id="services" className="bg-neutral-50/50">
+      <div className="text-center max-w-2xl mx-auto mb-20">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold tracking-tight mb-6"
+        >
+          World-Class Support Services
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-lg text-neutral-600"
+        >
+          Specialized solutions designed to help your business scale efficiently while maintaining quality.
+        </motion.p>
       </div>
-    </section>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.6 }}
+          >
+            <Card className="h-full group hover:border-accent/20">
+              <div className="w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-500">
+                <service.icon className="w-7 h-7" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 tracking-tight">{service.title}</h3>
+              <p className="text-neutral-600 leading-relaxed">
+                {service.description}
+              </p>
+              <div className="mt-auto pt-6">
+                <span className="text-sm font-bold text-accent group-hover:underline cursor-pointer">
+                  Learn more →
+                </span>
+              </div>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </Section>
   );
 }
