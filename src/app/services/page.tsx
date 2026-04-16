@@ -77,7 +77,7 @@ export default function ServicesPage() {
 
       <Section className="bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">"How can we help you reach the next level?"</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">&ldquo;How can we help you reach the next level?&rdquo;</h2>
           <p className="text-xl text-white/60 mb-12">Every BPO engagement starts with a thorough analysis of your current workflows and goals.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
             {[

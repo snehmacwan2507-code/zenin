@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
-
-const siteConfig = {
-  name: "Zenin Growth Partners",
-  description: "Zenin handles your operations, customer support, and backend workflows so you can focus on growth. Premium BPO and business support solutions.",
-  url: "https://zeningrowth.com", // Assuming domain
-  ogImage: "https://zeningrowth.com/og-image.jpg",
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -21,9 +15,17 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["BPO", "Business Support Outsourcing", "Customer Experience", "Back Office Support", "Lead Generation Agency", "Scale Operations", "Outsourced Operations"],
-  authors: [{ name: "Zenin Growth Partners" }],
-  creator: "Zenin Growth Partners",
+  keywords: [
+    "BPO",
+    "Business Support Outsourcing",
+    "Customer Experience",
+    "Back Office Support",
+    "Lead Generation Agency",
+    "Scale Operations",
+    "Outsourced Operations",
+  ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: `${siteConfig.url}${siteConfig.ogImagePath}`,
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: [`${siteConfig.url}${siteConfig.ogImagePath}`],
   },
   robots: {
     index: true,
@@ -73,26 +75,25 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": siteConfig.name,
-              "url": siteConfig.url,
-              "logo": `${siteConfig.url}/logo.png`,
-              "description": siteConfig.description,
-              "sameAs": [
-                "https://linkedin.com/company/zeningrowth",
-                // Add other social links here
-              ],
-              "contactPoint": {
+              name: siteConfig.name,
+              url: siteConfig.url,
+              logo: `${siteConfig.url}${siteConfig.logoPath}`,
+              description: siteConfig.description,
+              email: siteConfig.emails.hello,
+              contactPoint: {
                 "@type": "ContactPoint",
-                "telephone": "+1-555-000-0000",
-                "contactType": "customer service",
-                "areaServed": "Worldwide",
-                "availableLanguage": "English"
-              }
+                contactType: "sales",
+                email: siteConfig.emails.hello,
+                areaServed: "Worldwide",
+                availableLanguage: "English",
+              },
             }),
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans min-h-screen selection:bg-accent selection:text-white`}>
+      <body
+        className={`${inter.variable} font-sans min-h-screen selection:bg-accent selection:text-white`}
+      >
         {children}
       </body>
     </html>

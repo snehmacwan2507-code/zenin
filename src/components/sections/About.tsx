@@ -47,7 +47,7 @@ export default function About() {
                 <div className="text-white/40 text-sm uppercase tracking-widest font-bold">Client Retention</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-accent mb-2">10M+</div>
+                <div className="text-4xl font-bold text-accent mb-2">20+</div>
                 <div className="text-white/40 text-sm uppercase tracking-widest font-bold">Tasks Executed</div>
               </div>
             </div>

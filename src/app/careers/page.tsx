@@ -5,6 +5,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import CTA from "@/components/sections/CTA";
+import { siteConfig } from "@/lib/site";
 import { Briefcase, Zap, Heart, Rocket } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default function CareersPage() {
         <div className="max-w-3xl mb-20 text-center mx-auto">
           <h2 className="text-3xl font-bold mb-6">Why Work at Zenin?</h2>
           <p className="text-lg text-neutral-600">
-            We provide our team members with the training, tools, and culture they need to deliver world-class work. We don't just hire employees; we build professionals.
+            We provide our team members with the training, tools, and culture they need to deliver world-class work. We don&rsquo;t just hire employees; we build professionals.
           </p>
         </div>
 
@@ -50,9 +51,12 @@ export default function CareersPage() {
       <Section className="bg-white">
         <div className="rounded-[3rem] bg-neutral-900 text-white p-12 md:p-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 italic">Interested in joining our talent pool?</h2>
-          <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">Even if we don't have an active opening that fits your profile, we'd love to hear from you. We are constantly expanding our teams.</p>
-          <a href="mailto:careers@zeningrowth.com" className="inline-block bg-accent text-white px-12 py-4 rounded-full font-bold hover:bg-accent-hover transition-all">
-            Send Your Resume
+          <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">Even if we don&rsquo;t have an active opening that fits your profile, we&rsquo;d love to hear from you. We are constantly expanding our teams.</p>
+          <a
+            href={`mailto:${siteConfig.emails.careers}`}
+            className="inline-block bg-accent text-white px-12 py-4 rounded-full font-bold hover:bg-accent-hover transition-all"
+          >
+            {siteConfig.emails.careers}
           </a>
         </div>
       </Section>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
+import { siteConfig } from "@/lib/site";
 import { Mail, Clock, User } from "lucide-react";
 
 export default function Contact() {
@@ -31,8 +32,16 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-bold text-lg mb-1">Reach out to our directors on:</div>
-                  <p className="text-neutral-600">Sneh: Sneh@zeningrowthpartners.com</p>
-                  <p className="text-neutral-600">Caje: Cajetan@zeningrowthpartners.com</p>
+                  {siteConfig.emails.directors.map((email) => (
+                    <p key={email}>
+                      <a
+                        href={`mailto:${email}`}
+                        className="text-neutral-600 hover:text-accent transition-colors"
+                      >
+                        {email}
+                      </a>
+                    </p>
+                  ))}
                 </div>
               </div>
 
@@ -42,7 +51,14 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-bold text-lg mb-1">Contact us to onboard:</div>
-                  <p className="text-neutral-600">Hello@zeningrowthpartners.com</p>
+                  <p>
+                    <a
+                      href={`mailto:${siteConfig.emails.hello}`}
+                      className="text-neutral-600 hover:text-accent transition-colors"
+                    >
+                      {siteConfig.emails.hello}
+                    </a>
+                  </p>
                 </div>
               </div>
 

@@ -27,9 +27,9 @@ export default function WhyZenin() {
               <span className="text-accent">A Growth Partner</span>
             </h2>
             <p className="text-lg text-neutral-600 mb-10 leading-relaxed max-w-xl">
-              We don't just handle tasks; we optimize your entire workflow. 
+              We don&rsquo;t just handle tasks; we optimize your entire workflow. 
               Our approach ensures that every process is scalable, efficient, and 
-              perfectly aligned with your company's core values.
+              perfectly aligned with your company&rsquo;s core values.
             </p>
 
             <ul className="space-y-6">

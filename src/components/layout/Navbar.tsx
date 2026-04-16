@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
+import BrandLogo from "@/components/brand/BrandLogo";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
@@ -33,10 +34,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center font-bold text-white text-xl">Z</div>
-          <span className={`font-bold text-xl tracking-tighter ${isScrolled ? "text-black" : "text-white"}`}>
-            ZENIN <span className="font-light opacity-60">GROWTH</span>
-          </span>
+          <BrandLogo theme={isScrolled ? "dark" : "light"} />
         </Link>
 
         {/* Desktop Nav */}

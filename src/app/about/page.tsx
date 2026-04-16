@@ -47,7 +47,7 @@ export default function AboutPage() {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           <div className="flex-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 italic text-neutral-800">
-              "We believe that operational overhead shouldn't be the ceiling for your growth."
+              &ldquo;We believe that operational overhead shouldn&rsquo;t be the ceiling for your growth.&rdquo;
             </h2>
             <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
               <p>

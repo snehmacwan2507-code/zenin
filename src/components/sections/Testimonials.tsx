@@ -59,7 +59,7 @@ export default function Testimonials() {
             </div>
             
             <p className="text-2xl md:text-3xl font-medium text-neutral-800 leading-relaxed italic mb-10">
-              "{testimonials[active].content}"
+              &ldquo;{testimonials[active].content}&rdquo;
             </p>
 
             <div className="flex flex-col items-center">
