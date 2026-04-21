@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/ui/PageHeader";
 import Section from "@/components/ui/Section";
 import CTA from "@/components/sections/CTA";
-import { TrendingUp, Target, Search, Calendar, BarChart } from "lucide-react";
+import { Target, Search, Calendar, BarChart } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sales Support & B2B Lead Generation",
@@ -17,7 +17,7 @@ export default function SalesSupportPage() {
       <Navbar />
       <PageHeader 
         title="Fuel Your Sales Pipeline." 
-        description="Your closers should be closing. Zenin handles the top-of-funnel heavy lifting, from prospecting to initial outreach and appointment setting."
+        description="Your closers should be closing. Zenin Growth Partners handles the top-of-funnel heavy lifting, from prospecting to initial outreach and appointment setting."
       />
 
       <Section>

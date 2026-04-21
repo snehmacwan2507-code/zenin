@@ -68,19 +68,19 @@ export default function BrandLogo({
       <div className="flex flex-col leading-none">
         <span
           className={cn(
-            "text-base font-semibold uppercase tracking-[0.34em] md:text-lg",
+            "text-[0.8rem] font-semibold uppercase tracking-[0.22em] md:text-[0.92rem] md:tracking-[0.26em]",
             isLight ? "text-white" : "text-neutral-950"
           )}
         >
-          ZENIN
+          ZENIN GROWTH
         </span>
         <span
           className={cn(
-            "mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.34em] md:text-[0.65rem]",
+            "mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.26em] md:text-[0.62rem] md:tracking-[0.3em]",
             isLight ? "text-white/70" : "text-neutral-500"
           )}
         >
-          Growth Partners
+          PARTNERS
         </span>
       </div>
     </div>

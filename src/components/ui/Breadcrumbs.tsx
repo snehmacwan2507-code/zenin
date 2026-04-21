@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronRight, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/site";
 
 interface BreadcrumbsProps {
   className?: string;
@@ -68,13 +69,13 @@ export default function Breadcrumbs({ className }: BreadcrumbsProps) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://zeningrowth.com"
+                "item": siteConfig.url
               },
               ...paths.map((path, index) => ({
                 "@type": "ListItem",
                 "position": index + 2,
                 "name": path.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-                "item": `https://zeningrowth.com/${paths.slice(0, index + 1).join("/")}`
+                "item": `${siteConfig.url}/${paths.slice(0, index + 1).join("/")}`
               }))
             ]
           })

@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 import BrandLogo from "@/components/brand/BrandLogo";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,9 +12,13 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const nextScrolled = window.scrollY > 50;
+      setIsScrolled((current) => (current === nextScrolled ? current : nextScrolled));
     };
-    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -50,7 +53,11 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button variant={isScrolled ? "primary" : "secondary"} className="scale-90">
+          <Button
+            href="/contact"
+            variant={isScrolled ? "primary" : "secondary"}
+            className="scale-90"
+          >
             Get Started
           </Button>
         </div>
@@ -69,32 +76,25 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-black/5 overflow-hidden"
-          >
-            <div className="flex flex-col p-6 gap-6">
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href} 
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-neutral-800"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button variant="primary" className="w-full">
-                Get Started
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {mobileMenuOpen && (
+        <div className="border-b border-black/5 bg-white md:hidden">
+          <div className="flex flex-col gap-6 p-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg font-medium text-neutral-800"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Button href="/contact" variant="primary" className="w-full">
+              Get Started
+            </Button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

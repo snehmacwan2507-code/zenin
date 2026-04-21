@@ -10,7 +10,8 @@ import { Briefcase, Zap, Heart, Rocket } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Careers | Join Zenin Growth Partners",
-  description: "Join a team of operational experts. Explore career opportunities at Zenin and help us build the global operational backbone for modern businesses.",
+  description:
+    "Join a team of operational experts. Explore career opportunities at Zenin Growth Partners and help us build the global operational backbone for modern businesses.",
 };
 
 export default function CareersPage() {
@@ -24,7 +25,7 @@ export default function CareersPage() {
 
       <Section>
         <div className="max-w-3xl mb-20 text-center mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Why Work at Zenin?</h2>
+          <h2 className="text-3xl font-bold mb-6">Why Work at Zenin Growth Partners?</h2>
           <p className="text-lg text-neutral-600">
             We provide our team members with the training, tools, and culture they need to deliver world-class work. We don&rsquo;t just hire employees; we build professionals.
           </p>
@@ -34,7 +35,7 @@ export default function CareersPage() {
           {[
             { i: Zap, t: "Fast-Paced Environment", d: "Work with some of the fastest-growing startups and established agencies globally." },
             { i: Heart, t: "People-First Culture", d: "We value work-life balance and provide a supportive environment for professional growth." },
-            { i: Rocket, t: "Growth Opportunity", d: "As Zenin scales, so do our people. We promote from within whenever possible." },
+            { i: Rocket, t: "Growth Opportunity", d: "As Zenin Growth Partners scales, so do our people. We promote from within whenever possible." },
             { i: Briefcase, t: "Remote Flexibility", d: "Work from anywhere in the world with our globally distributed operational model." },
           ].map((item, idx) => (
             <Card key={idx} className="bg-neutral-50/50 border-none">

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/ui/PageHeader";
 import Section from "@/components/ui/Section";
 import CTA from "@/components/sections/CTA";
-import { UserCheck, Shield, FileText, Layout, Database } from "lucide-react";
+import { Shield, FileText, Layout, Database } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Back-Office & Operational Support",
@@ -47,10 +48,12 @@ export default function BackOfficePage() {
           </div>
           <div className="flex-1">
             <div className="relative aspect-square rounded-[3rem] overflow-hidden">
-              <img 
+              <Image
+                fill
                 src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e01a?auto=format&fit=crop&q=80" 
                 alt="Process optimization" 
-                className="w-full h-full object-cover grayscale"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover grayscale"
               />
               <div className="absolute inset-0 bg-accent/5 mix-blend-multiply" />
             </div>

@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 
 export default function About() {
@@ -8,28 +6,21 @@ export default function About() {
     <Section id="about" className="bg-black text-white">
       <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
         <div className="flex-1">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="rounded-3xl overflow-hidden border border-white/10"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" 
-              alt="About Zenin" 
-              className="w-full aspect-[4/3] object-cover grayscale"
-            />
-          </motion.div>
+          <div className="animate-fade-in overflow-hidden rounded-3xl border border-white/10">
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                fill
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" 
+                alt="About Zenin Growth Partners"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover grayscale"
+              />
+            </div>
+          </div>
         </div>
         
         <div className="flex-1">
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
               Reliable Excellence <br />
               <span className="text-white/40">In Every Workflow</span>
@@ -51,7 +42,7 @@ export default function About() {
                 <div className="text-white/40 text-sm uppercase tracking-widest font-bold">Tasks Executed</div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </Section>

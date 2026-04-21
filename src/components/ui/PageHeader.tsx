@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Breadcrumbs from "./Breadcrumbs";
 
@@ -26,12 +23,7 @@ export default function PageHeader({
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <Breadcrumbs />
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mt-8 max-w-3xl"
-        >
+        <div className="animate-fade-up mt-8 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]">
             {title}
           </h1>
@@ -40,7 +32,7 @@ export default function PageHeader({
               {description}
             </p>
           )}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

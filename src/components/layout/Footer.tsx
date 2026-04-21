@@ -19,10 +19,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-neutral-400">Quick Links</h4>
             <ul className="space-y-4">
-              <li><Link href="/#services" className="text-neutral-600 hover:text-accent transition-colors">Services</Link></li>
-              <li><Link href="/#why-zenin" className="text-neutral-600 hover:text-accent transition-colors">Why Zenin</Link></li>
+              <li><Link href="/services" className="text-neutral-600 hover:text-accent transition-colors">Services</Link></li>
+              <li><Link href="/#why-zenin" className="text-neutral-600 hover:text-accent transition-colors">Why Zenin Growth Partners</Link></li>
               <li><Link href="/#about" className="text-neutral-600 hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/#testimonials" className="text-neutral-600 hover:text-accent transition-colors">Testimonials</Link></li>
+              <li><Link href="/contact" className="text-neutral-600 hover:text-accent transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -45,8 +45,8 @@ export default function Footer() {
         <div className="pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-neutral-400">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-black transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-black transition-colors">Terms of Service</Link>
+            <Link href="/contact" className="hover:text-black transition-colors">Privacy Policy</Link>
+            <Link href="/contact" className="hover:text-black transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

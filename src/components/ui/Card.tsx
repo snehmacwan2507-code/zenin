@@ -1,7 +1,4 @@
-"use client";
-
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface CardProps {
@@ -16,15 +13,15 @@ export default function Card({
   hoverEffect = true,
 }: CardProps) {
   return (
-    <motion.div
-      whileHover={hoverEffect ? { y: -10, boxShadow: "0 20px 40px -20px rgba(0, 0, 0, 0.15)" } : {}}
-      transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+    <div
       className={cn(
-        "glass rounded-3xl p-8 border border-black/5 flex flex-col gap-4",
+        "glass flex flex-col gap-4 rounded-3xl border border-black/5 p-8 transition duration-300",
+        hoverEffect &&
+          "motion-safe:hover:-translate-y-2 motion-safe:hover:border-accent/20 motion-safe:hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]",
         className
       )}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

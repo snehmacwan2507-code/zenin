@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/ui/PageHeader";
@@ -51,7 +52,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
               <p>
-                Founded by a team of operational experts, Zenin was built to solve a specific pain point: the high cost and complexity of scaling support and back-office teams. 
+                Founded by a team of operational experts, Zenin Growth Partners was built to solve a specific pain point: the high cost and complexity of scaling support and back-office teams.
               </p>
               <p>
                 In the modern economy, agility is everything. We provide that agility by offering world-class talent and process-driven execution that plugs directly into your existing workflows.
@@ -60,10 +61,12 @@ export default function AboutPage() {
           </div>
           <div className="flex-1 w-full lg:w-auto">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-              <img 
+              <Image
+                fill
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" 
-                alt="Zenin team strategy" 
-                className="w-full h-full object-cover grayscale"
+                alt="Zenin Growth Partners team strategy" 
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover grayscale"
               />
             </div>
           </div>

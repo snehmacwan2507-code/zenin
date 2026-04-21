@@ -1,22 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/lib/site";
 import { Mail, Clock, User } from "lucide-react";
+import type { FormEvent } from "react";
 
 export default function Contact() {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    const subject = encodeURIComponent(
+      name ? `New inquiry from ${name}` : "New inquiry from website"
+    );
+
+    const body = encodeURIComponent(
+      [
+        `Name: ${name || "Not provided"}`,
+        `Email: ${email || "Not provided"}`,
+        "",
+        "Message:",
+        message || "Not provided",
+      ].join("\n")
+    );
+
+    window.location.href = `mailto:${siteConfig.emails.hello}?subject=${subject}&body=${body}`;
+  };
   return (
     <Section id="contact" className="bg-white">
       <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
         {/* Left Col: Contact Info */}
         <div className="flex-1">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div className="animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
               Start Your <br />
               <span className="text-accent">Growth Journey</span>
@@ -73,24 +93,20 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right Col: Form */}
         <div className="flex-1">
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass p-8 md:p-12 rounded-[2rem] border-black/5 shadow-premium"
-          >
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <div className="glass animate-fade-up animate-delay-2 rounded-[2rem] border-black/5 p-8 shadow-premium md:p-12">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-neutral-400">Name</label>
                   <input 
                     type="text" 
                     id="name"
+                    name="name"
                     placeholder="John Doe"
                     className="w-full bg-neutral-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-accent/20 transition-all outline-none"
                   />
@@ -100,6 +116,7 @@ export default function Contact() {
                   <input 
                     type="email" 
                     id="email"
+                    name="email"
                     placeholder="john@company.com"
                     className="w-full bg-neutral-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-accent/20 transition-all outline-none"
                   />
@@ -110,17 +127,18 @@ export default function Contact() {
                 <label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-neutral-400">Message</label>
                 <textarea 
                   id="message"
+                  name="message"
                   rows={4}
                   placeholder="How can we help your business grow?"
                   className="w-full bg-neutral-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-accent/20 transition-all outline-none resize-none"
                 />
               </div>
 
-              <Button variant="primary" className="w-full py-4 text-lg">
+              <Button type="submit" variant="primary" className="w-full py-4 text-lg">
                 Contact Us
               </Button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </Section>

@@ -2,11 +2,11 @@ import type { MetadataRoute } from "next";
 
 export const siteConfig = {
   name: "Zenin Growth Partners",
-  shortName: "Zenin",
+  shortName: "Zenin Growth Partners",
   tagline: "growth partners",
   description:
-    "Zenin handles your operations, customer support, and backend workflows so you can focus on growth. Premium BPO and business support solutions.",
-  url: "https://zeningrowth.com",
+    "Zenin Growth Partners handles your operations, customer support, and backend workflows so you can focus on growth. Premium BPO and business support solutions.",
+  url: "https://www.zeningrowthpartners.com",
   logoPath: "/logo.svg",
   ogImagePath: "/og-image.svg",
   emails: {
@@ -27,12 +27,17 @@ export const sitePages: Array<{
   { path: "/", changeFrequency: "weekly", priority: 1 },
   { path: "/services", changeFrequency: "weekly", priority: 0.9 },
   {
-    path: "/services/customer-experience",
+    path: "/services/customer-care-outsourcing",
     changeFrequency: "monthly",
     priority: 0.85,
   },
   {
     path: "/services/back-office-operations",
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
+  {
+    path: "/services/customer-experience",
     changeFrequency: "monthly",
     priority: 0.85,
   },

@@ -9,17 +9,24 @@ import { Headphones, UserCheck, TrendingUp, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Professional Support Services",
-  description: "Explore our range of BPO solutions including Customer Experience, Back-Office Operations, and Sales Support designed for modern scale.",
+  title: "Services",
+  description:
+    "Explore Zenin Growth Partners services across customer care outsourcing, back-office operations, and sales support for modern teams ready to scale.",
 };
 
 const serviceDetails = [
   {
-    title: "Customer Experience",
-    description: "Provide world-class support across all channels including email, live chat, and voice. We focus on KPIs and customer satisfaction.",
+    title: "Customer Care Outsourcing",
+    description:
+      "Deliver world-class support across email, live chat, and voice with KPI-driven teams focused on satisfaction and retention.",
     icon: Headphones,
-    href: "/services/customer-experience",
-    features: ["24/7 Multi-channel support", "Multilingual capabilities", "Technical support", "Success & retention"]
+    href: "/services/customer-care-outsourcing",
+    features: [
+      "24/7 multi-channel support",
+      "Multilingual capabilities",
+      "Technical support",
+      "Success and retention",
+    ],
   },
   {
     title: "Back-Office Operations",
@@ -42,8 +49,8 @@ export default function ServicesPage() {
     <main>
       <Navbar />
       <PageHeader 
-        title="Solutions Tailored for Scale." 
-        description="From high-touch customer support to complex backend workflows, we provide the human capital and process maturity you need to grow."
+        title="Services Built for Scale." 
+        description="Explore dedicated support lines from Zenin Growth Partners, from customer care outsourcing to complex back-office workflows and revenue support."
       />
 
       <Section>
@@ -67,7 +74,7 @@ export default function ServicesPage() {
                   ))}
                 </div>
                 <div className="mt-auto flex items-center gap-2 text-accent font-bold group-hover:translate-x-1 transition-transform">
-                  View Service Details <ChevronRight className="w-4 h-4" />
+                  View service details <ChevronRight className="w-4 h-4" />
                 </div>
               </Card>
             </Link>
@@ -77,8 +84,8 @@ export default function ServicesPage() {
 
       <Section className="bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">&ldquo;How can we help you reach the next level?&rdquo;</h2>
-          <p className="text-xl text-white/60 mb-12">Every BPO engagement starts with a thorough analysis of your current workflows and goals.</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">&ldquo;How can Zenin Growth Partners help you reach the next level?&rdquo;</h2>
+          <p className="text-xl text-white/60 mb-12">Every engagement starts with a thorough analysis of your current workflows, goals, and service expectations.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
             {[
               { num: "01", t: "Discovery", d: "Deep dive into your operations." },
