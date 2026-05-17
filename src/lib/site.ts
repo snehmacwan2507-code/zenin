@@ -5,9 +5,9 @@ export const siteConfig = {
   shortName: "Zenin Growth Partners",
   tagline: "growth partners",
   description:
-    "Zenin Growth Partners handles your operations, customer support, and backend workflows so you can focus on growth. Premium BPO and business support solutions.",
+    "Zenin Growth Partners handles operations, customer support, and backend workflows so your team can focus on growth.",
   url: "https://www.zeningrowthpartners.com",
-  logoPath: "/logo.svg",
+  logoPath: "/logo-dragon-transparent-v2.png",
   ogImagePath: "/og-image.svg",
   emails: {
     hello: "hello@zeningrowthpartners.com",

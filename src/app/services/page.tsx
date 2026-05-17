@@ -11,36 +11,36 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore Zenin Growth Partners services across customer care outsourcing, back-office operations, and sales support for modern teams ready to scale.",
+    "Explore Zenin Growth Partners services for customer care, operations, and sales support.",
 };
 
 const serviceDetails = [
   {
     title: "Customer Care Outsourcing",
     description:
-      "Deliver world-class support across email, live chat, and voice with KPI-driven teams focused on satisfaction and retention.",
+      "Give your customers fast thoughtful support across email live chat and voice.",
     icon: Headphones,
     href: "/services/customer-care-outsourcing",
     features: [
-      "24/7 multi-channel support",
-      "Multilingual capabilities",
-      "Technical support",
-      "Success and retention",
+      "24 7 support coverage",
+      "Multilingual support",
+      "Technical issue handling",
+      "Retention focused care",
     ],
   },
   {
-    title: "Back-Office Operations",
-    description: "Streamline your administrative and data-driven tasks with our meticulous execution teams. Focus on your core business while we handle the rest.",
+    title: "Back Office Operations",
+    description: "Keep administrative and data tasks moving with a reliable team so your core team stays focused.",
     icon: UserCheck,
     href: "/services/back-office-operations",
-    features: ["Data Entry & Management", "Content Moderation", "Fraud & Trust Safety", "Inventory Management"]
+    features: ["Data entry and management", "Content review", "Fraud and trust safety", "Inventory support"]
   },
   {
-    title: "Sales & Lead Generation",
-    description: "Build a consistent pipeline of high-quality leads. Our sales support teams handle the top-of-funnel work so your closers can close.",
+    title: "Sales Support And Lead Generation",
+    description: "Build a healthier pipeline with focused outreach and better lead qualification.",
     icon: TrendingUp,
     href: "/services/sales-support-lead-gen",
-    features: ["B2B Lead Generation", "Appointment Setting", "LinkedIn Outreach", "CRM Management"]
+    features: ["B2B lead generation", "Appointment setting", "LinkedIn outreach", "CRM updates"]
   }
 ];
 
@@ -48,9 +48,9 @@ export default function ServicesPage() {
   return (
     <main>
       <Navbar />
-      <PageHeader 
-        title="Services Built for Scale." 
-        description="Explore dedicated support lines from Zenin Growth Partners, from customer care outsourcing to complex back-office workflows and revenue support."
+      <PageHeader
+        title="Services Built For Scale"
+        description="Choose the support model that fits your team, your workflow, and your growth goals."
       />
 
       <Section>
@@ -84,13 +84,13 @@ export default function ServicesPage() {
 
       <Section className="bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">&ldquo;How can Zenin Growth Partners help you reach the next level?&rdquo;</h2>
-          <p className="text-xl text-white/60 mb-12">Every engagement starts with a thorough analysis of your current workflows, goals, and service expectations.</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">How we get started</h2>
+          <p className="text-xl text-white/60 mb-12">Every engagement starts with a clear review of your workflows, goals, and support needs.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
             {[
-              { num: "01", t: "Discovery", d: "Deep dive into your operations." },
-              { num: "02", t: "Strategy", d: "Designing the ideal team & process." },
-              { num: "03", t: "Execution", d: "Seamless integration & launch." }
+              { num: "01", t: "Discovery", d: "We learn how your current process works." },
+              { num: "02", t: "Planning", d: "We design the right team and workflow." },
+              { num: "03", t: "Launch", d: "We onboard fast and start delivering." }
             ].map((step, i) => (
               <div key={i} className="border-l border-white/20 pl-6">
                 <div className="text-accent font-bold text-2xl mb-2">{step.num}</div>

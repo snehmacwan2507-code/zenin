@@ -1,10 +1,10 @@
 import { ShieldCheck, Users, Zap, Repeat } from "lucide-react";
 
 const indicators = [
-  { icon: ShieldCheck, text: "24/7 Support" },
-  { icon: Zap, text: "Scalable Teams" },
-  { icon: Repeat, text: "Process-Driven Execution" },
-  { icon: Users, text: "Reliable Operations" },
+  { icon: ShieldCheck, text: "24 7 Support" },
+  { icon: Zap, text: "Teams That Scale" },
+  { icon: Repeat, text: "Reliable Workflows" },
+  { icon: Users, text: "People You Can Trust" },
 ];
 
 export default function TrustStrip() {

@@ -9,29 +9,29 @@ import { Users, Target, Award, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn more about Zenin Growth Partners, our mission, and how we act as an extension of your team to drive operational excellence.",
+  description: "Learn how Zenin Growth Partners supports your team with dependable operations.",
 };
 
 const values = [
   {
     icon: Target,
-    title: "Precision Execution",
-    description: "Every process is mapped and optimized for absolute consistency and quality."
+    title: "Focused Execution",
+    description: "We build clear workflows so every task is handled with care and consistency."
   },
   {
     icon: Users,
-    title: "Team Integration",
-    description: "We don't just work for you; we work with you as an extension of your own culture."
+    title: "True Team Alignment",
+    description: "We work alongside your team and adapt to your culture and goals."
   },
   {
     icon: Award,
-    title: "Uncompromising Quality",
-    description: "High standards are not a goal for us—they are the starting point for every engagement."
+    title: "High Standards Always",
+    description: "Quality is not an extra step for us. It is built into every process."
   },
   {
     icon: Globe,
-    title: "Scalable Reach",
-    description: "Our global infrastructure allows your business to scale across time zones without friction."
+    title: "Ready To Scale",
+    description: "Our global setup helps your business grow across regions and time zones."
   }
 ];
 
@@ -39,23 +39,23 @@ export default function AboutPage() {
   return (
     <main>
       <Navbar />
-      <PageHeader 
-        title="More Than Outsourcing — A Growth Partner." 
-        description="Zenin Growth Partners was founded with a single mission: to provide the operational backbone that allows visionary companies to focus on scaling."
+      <PageHeader
+        title="More Than Outsourcing A Growth Partner"
+        description="Zenin Growth Partners was built to help ambitious teams run better operations at every stage."
       />
 
       <Section>
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           <div className="flex-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 italic text-neutral-800">
-              &ldquo;We believe that operational overhead shouldn&rsquo;t be the ceiling for your growth.&rdquo;
+              &ldquo;Operations should empower growth not slow it down.&rdquo;
             </h2>
             <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
               <p>
-                Founded by a team of operational experts, Zenin Growth Partners was built to solve a specific pain point: the high cost and complexity of scaling support and back-office teams.
+                Zenin Growth Partners was founded to solve a common challenge. As companies grow, support and operations get harder to manage.
               </p>
               <p>
-                In the modern economy, agility is everything. We provide that agility by offering world-class talent and process-driven execution that plugs directly into your existing workflows.
+                We make that shift easier with skilled teams and dependable systems that fit your current workflow.
               </p>
             </div>
           </div>
@@ -63,8 +63,8 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 fill
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" 
-                alt="Zenin Growth Partners team strategy" 
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80"
+                alt="Zenin Growth Partners team strategy"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover grayscale"
               />

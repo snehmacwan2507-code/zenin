@@ -7,16 +7,16 @@ import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Get in touch with Zenin Growth Partners. Whether you're looking to scale your support, sales, or operations, we're here to help.",
+  description: "Get in touch with Zenin Growth Partners to discuss support for operations customer care or sales workflows.",
 };
 
 export default function ContactPage() {
   return (
     <main>
       <Navbar />
-      <PageHeader 
-        title="Let's Talk Growth." 
-        description="Fill out the form below or reach out directly. Our team typically responds within 2 business hours."
+      <PageHeader
+        title="Let Us Talk About Your Goals"
+        description="Fill out the form below or contact us directly. We usually reply within two business hours."
       />
 
       <Contact />

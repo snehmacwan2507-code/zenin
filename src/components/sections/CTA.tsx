@@ -12,13 +12,13 @@ export default function CTA() {
 
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="animate-fade-up mb-8 text-4xl font-bold tracking-tight text-white md:text-6xl">
-            Outsource the Work. <br />
-            <span className="text-white/40">Keep the Control.</span>
+            Let Us Run The Ops <br />
+            <span className="text-white/40">So You Can Lead Growth</span>
           </h2>
-          
+
           <p className="animate-fade-up animate-delay-1 mb-12 text-xl text-neutral-400">
-            Let our team handle operations while you focus on scaling your business. 
-            Reliable, professional, and fully integrated with your brand.
+            Our team handles the daily operational load while you focus on the
+            work that moves your business forward.
           </p>
 
           <div className="animate-fade-up animate-delay-2 flex flex-col justify-center gap-6 sm:flex-row">

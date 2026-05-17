@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Viewport } from "next";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   title: {
     default: `${siteConfig.name} | Scale Your Business Without Hiring`,
     template: `%s | ${siteConfig.name}`,
@@ -67,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -92,7 +100,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} font-sans min-h-screen selection:bg-accent selection:text-white`}
+        suppressHydrationWarning
+        className="font-sans min-h-screen selection:bg-accent selection:text-white"
       >
         {children}
       </body>

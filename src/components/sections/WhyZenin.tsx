@@ -1,12 +1,67 @@
+"use client";
+
 import Image from "next/image";
 import Section from "@/components/ui/Section";
 import { CheckCircle2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+function StatCounter({
+  target,
+  suffix = "",
+  duration = 1200,
+}: {
+  target: number;
+  suffix?: string;
+  duration?: number;
+}) {
+  const [value, setValue] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+
+    const start = performance.now();
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      setValue(Math.round(target * progress));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  }, [duration, started, target]);
+
+  return (
+    <span ref={ref}>
+      {value}
+      {suffix}
+    </span>
+  );
+}
 
 const benefits = [
-  "Scalable team as you grow",
-  "Trained professionals aligned with your brand",
-  "Reduced operational cost",
-  "Faster turnaround with structured workflows",
+  "A team that grows with you",
+  "Skilled professionals who match your brand voice",
+  "Lower day to day operating cost",
+  "Faster delivery through clear workflows",
 ];
 
 export default function WhyZenin() {
@@ -16,13 +71,12 @@ export default function WhyZenin() {
         <div className="flex-1 order-2 lg:order-1">
           <div className="animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
-              More Than Outsourcing — <br />
-              <span className="text-accent">A Growth Partner</span>
+              More Than Outsourcing <br />
+              <span className="text-accent">A Real Growth Partner</span>
             </h2>
             <p className="text-lg text-neutral-600 mb-10 leading-relaxed max-w-xl">
-              We don&rsquo;t just handle tasks; we optimize your entire workflow. 
-              Our approach ensures that every process is scalable, efficient, and 
-              perfectly aligned with your company&rsquo;s core values.
+              We do more than complete tasks. We improve how work moves across
+              your business so every step feels smoother and easier to manage.
             </p>
 
             <ul className="space-y-6">
@@ -55,21 +109,23 @@ export default function WhyZenin() {
             <div className="relative aspect-square overflow-hidden rounded-3xl bg-neutral-100 shadow-premium">
               <Image
                 fill
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
                 alt="Growth Partner"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover grayscale opacity-80"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent" />
             </div>
-            
+
             {/* Glass decoration */}
             <div className="animate-float absolute -bottom-8 -left-8 hidden rounded-2xl border-white/10 p-8 shadow-premium glass-dark md:block">
               <div className="flex items-center gap-4 mb-2">
                 <div className="w-3 h-3 rounded-full bg-accent" />
-                <span className="text-white font-bold text-2xl">40%</span>
+                <span className="text-white font-bold text-2xl">
+                  <StatCounter target={40} suffix="%" />
+                </span>
               </div>
-              <p className="text-white/60 text-sm">Average Cost Reduction</p>
+              <p className="text-white/60 text-sm">Average Cost Savings</p>
             </div>
           </div>
         </div>

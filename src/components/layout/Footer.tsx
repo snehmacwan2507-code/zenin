@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import BrandLogo from "@/components/brand/BrandLogo";
 import { siteConfig } from "@/lib/site";
 
@@ -12,22 +12,43 @@ export default function Footer() {
               <BrandLogo />
             </Link>
             <p className="text-neutral-500 max-w-sm leading-relaxed">
-              Zenin Growth Partners helps organizations streamline operations, elevate customer experience, and scale with disciplined execution.
+              Zenin Growth Partners helps teams run operations smoothly while
+              improving customer experience and day to day execution.
             </p>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-neutral-400">Quick Links</h4>
+            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-neutral-400">
+              Quick Links
+            </h4>
             <ul className="space-y-4">
-              <li><Link href="/services" className="text-neutral-600 hover:text-accent transition-colors">Services</Link></li>
-              <li><Link href="/#why-zenin" className="text-neutral-600 hover:text-accent transition-colors">Why Zenin Growth Partners</Link></li>
-              <li><Link href="/#about" className="text-neutral-600 hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="text-neutral-600 hover:text-accent transition-colors">Contact</Link></li>
+              <li>
+                <Link href="/services" className="text-neutral-600 hover:text-accent transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/#why-zenin" className="text-neutral-600 hover:text-accent transition-colors">
+                  Why Zenin
+                </Link>
+              </li>
+              <li>
+                <Link href="/#about" className="text-neutral-600 hover:text-accent transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-neutral-600 hover:text-accent transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-neutral-400">Contact</h4>
+            <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-neutral-400">
+              Contact
+            </h4>
             <ul className="space-y-4">
               <li>
                 <a
@@ -37,16 +58,20 @@ export default function Footer() {
                   {siteConfig.emails.hello}
                 </a>
               </li>
-              <li className="text-neutral-600">Available 24/7</li>
+              <li className="text-neutral-600">Support is always available</li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-neutral-400">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          <p>(c) {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link href="/contact" className="hover:text-black transition-colors">Privacy Policy</Link>
-            <Link href="/contact" className="hover:text-black transition-colors">Terms of Service</Link>
+            <Link href="/contact" className="hover:text-black transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/contact" className="hover:text-black transition-colors">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>

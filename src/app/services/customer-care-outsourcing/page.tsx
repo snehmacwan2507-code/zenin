@@ -9,7 +9,7 @@ import { Star, Phone, Mail, MessageSquare } from "lucide-react";
 export const metadata: Metadata = {
   title: "Customer Care Outsourcing",
   description:
-    "Scale your customer support with 24/7 multi-channel customer care outsourcing. Email, chat, and voice support that feels like an extension of your own team.",
+    "Scale customer support with all day coverage across email chat and voice while keeping service quality high.",
 };
 
 export default function CustomerCareOutsourcingPage() {
@@ -17,21 +17,20 @@ export default function CustomerCareOutsourcingPage() {
     <main>
       <Navbar />
       <PageHeader
-        title="World-Class Customer Care Outsourcing."
-        description="Don&apos;t just answer tickets. Build relationships. Zenin Growth Partners provides the talent and systems to deliver superior support at scale."
+        title="Customer Care That Feels Personal"
+        description="Do more than answer tickets. Build trust with customers through fast thoughtful support at scale."
       />
 
       <Section>
         <div className="flex flex-col gap-16 lg:flex-row lg:gap-24">
           <div className="flex-1">
             <h2 className="mb-6 text-3xl font-bold">
-              Omnichannel Support That Never Sleeps.
+              Omnichannel Support All Day
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-neutral-600">
-              Your customers expect answers in minutes, not days. Zenin Growth
-              Partners provides fully managed, 24/7 support teams that integrate
-              seamlessly with your existing helpdesk software such as Zendesk,
-              Intercom, and Freshdesk.
+              Your customers expect fast answers. We run dedicated support teams
+              that plug into your current helpdesk tools including Zendesk
+              Intercom and Freshdesk.
             </p>
 
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -40,25 +39,25 @@ export default function CustomerCareOutsourcingPage() {
                   icon: MessageSquare,
                   title: "Live Chat",
                   description:
-                    "Real-time responses that turn quick questions into confident resolutions.",
+                    "Quick responses that solve questions before they become bigger issues.",
                 },
                 {
                   icon: Mail,
                   title: "Email Support",
                   description:
-                    "Detailed, high-context replies for customers who need thoughtful help.",
+                    "Clear responses for customers who need thoughtful detailed help.",
                 },
                 {
                   icon: Phone,
                   title: "Voice Support",
                   description:
-                    "High-empathy phone coverage for urgent or high-stakes conversations.",
+                    "Empathetic call support for urgent and sensitive conversations.",
                 },
                 {
                   icon: Star,
                   title: "Customer Success",
                   description:
-                    "Proactive follow-up designed to improve retention and satisfaction.",
+                    "Proactive follow up that improves retention and loyalty.",
                 },
               ].map((item, idx) => (
                 <div key={idx} className="space-y-3">
@@ -74,14 +73,14 @@ export default function CustomerCareOutsourcingPage() {
 
           <div className="flex-1 rounded-[3rem] border border-black/5 bg-neutral-50 p-8 md:p-12">
             <h3 className="mb-8 text-2xl font-bold">
-              Why Zenin Growth Partners for customer care?
+              Why teams choose Zenin for customer care
             </h3>
             <ul className="space-y-6">
               {[
-                "Average response time under 2 minutes",
-                "95%+ CSAT score average",
-                "Strict quality assurance protocols",
-                "Direct Slack and Discord integration",
+                "Average response time under two minutes",
+                "Strong customer satisfaction scores",
+                "Consistent quality checks",
+                "Direct Slack and Discord collaboration",
                 "Weekly performance reporting",
               ].map((point, i) => (
                 <li

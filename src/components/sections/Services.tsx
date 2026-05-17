@@ -7,21 +7,21 @@ const services = [
   {
     title: "Customer Care Outsourcing",
     description:
-      "Multi-channel support across email, chat, and phone to improve response times and customer satisfaction.",
+      "Support across email chat and phone to improve response time and customer satisfaction.",
     icon: Headphones,
     href: "/services/customer-care-outsourcing",
   },
   {
     title: "Virtual Assistance & Back Office",
     description:
-      "From scheduling to admin tasks, we handle your operations so your team stays focused.",
+      "From scheduling to admin work we handle daily operations so your team stays focused.",
     icon: UserCheck,
     href: "/services/back-office-operations",
   },
   {
     title: "Lead Generation & Sales Support",
     description:
-      "We help you find, nurture, and convert leads consistently through structured outreach.",
+      "We help you find nurture and convert leads through a clear outreach process.",
     icon: TrendingUp,
     href: "/services/sales-support-lead-gen",
   },
@@ -32,10 +32,10 @@ export default function Services() {
     <Section id="services" className="bg-neutral-50/50">
       <div className="text-center max-w-2xl mx-auto mb-20">
         <h2 className="animate-fade-up mb-6 text-4xl font-bold tracking-tight md:text-5xl">
-          World-Class Support Services
+          Support Services Built for Growth
         </h2>
         <p className="animate-fade-up animate-delay-1 text-lg text-neutral-600">
-          Specialized solutions designed to help your business scale efficiently while maintaining quality.
+          Practical support that helps your business scale while keeping quality high.
         </p>
       </div>
 

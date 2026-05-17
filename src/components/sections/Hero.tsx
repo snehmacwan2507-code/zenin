@@ -15,15 +15,15 @@ export default function Hero() {
         <div className="max-w-3xl">
           <div className="animate-fade-up animate-delay-2">
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-              Scale Your Business <br />
-              <span className="text-white/60">Without Hiring More People</span>
+              Grow Your Business <br />
+              <span className="text-white/60">Without Growing Your Headcount</span>
             </h1>
           </div>
 
           <p className="animate-fade-up animate-delay-4 mb-12 max-w-2xl text-lg leading-relaxed text-neutral-400 md:text-xl">
-            Zenin Growth Partners handles your operations, customer support, and
-            backend workflows so you can focus on growth. Expert teams,
-            process-driven execution.
+            We run your daily operations, support desk, and backend tasks so your
+            team can focus on growth. You get experienced people plus clear
+            execution from day one.
           </p>
 
           <div className="animate-fade-up animate-delay-5 flex flex-col gap-4 sm:flex-row">
